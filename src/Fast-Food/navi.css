@@ -1,0 +1,26 @@
+
+.btn{
+    border:2px solid black;
+    width:90px;
+    border-radius: 20px;
+    height:40px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 1s;
+    
+}
+.btn:hover{
+    background-color:white;
+}
+.card{
+    float:right;
+    margin-top: -40px;
+    border: 2px solid black;
+    width:20px;
+    height: 20px;
+    font-size: 12px;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+}
