@@ -5,7 +5,7 @@ function Menu({category,setcategory}){
     
     return(
         <>
-        <div className="exploremenulist flex w-auto ml-80  mt-10 ">
+        <div className="exploremenulist flex lg:w-auto lg:ml-80 sm:ml-20 mt-10 " id="menu">
         {menulist.map((itam,index)=>{
             return(
                 <div key={index} className="menuitem w-20 ml-16 gap-10 " onClick={()=>setcategory(prev=>prev==itam.name?"All":itam.name)}>

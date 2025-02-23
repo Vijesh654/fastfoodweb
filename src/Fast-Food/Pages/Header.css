@@ -1,0 +1,11 @@
+.head{
+    background-image:url("./fooditems/icons/fastpinterest.jpg");
+    background-repeat: no-repeat;
+    /* width:90%;
+    margin-left:5%;
+    margin-right:5%; */
+    border-radius: 15px;
+    background-size: cover;
+    height: 600px;
+    /* filter: blur(2px); */
+}

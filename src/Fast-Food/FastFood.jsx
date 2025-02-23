@@ -6,11 +6,13 @@ import Cart from "./Pages/Cartitem"
 import Order from "./Pages/Order"
 import StoreProvider from "./Pages/Storefoodlistt"
 import Loginpage from "./Pages/Loginpage"
+import Contactus from "./Pages/Contactus"
+import Aboutus from "./Pages/Aboutus"
 function Fastfood(){
     const [showlogin,setshowlogin]=useState(false)
     return(
         <>
-      
+        <div style={{ scrollBehavior: 'smooth' }}>
         <StoreProvider>
         <BrowserRouter>
         <Navigation setshowlogin={setshowlogin}/>
@@ -21,9 +23,12 @@ function Fastfood(){
         <Route path="/" element={<Home/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/order" element={<Order/>}/>
+        <Route path="/aboutus" element={<Aboutus/>}/>
        </Routes>
        </BrowserRouter>
        </StoreProvider>
+       <Contactus/>
+       </div>
         </>
     )
 }

@@ -10,6 +10,7 @@ const deserts2 = './fooditems/foodimages/deserts2.jpg'
 const sandwich1 = './fooditems/foodimages/sandwich1.jpg'
 const sandwich2 = './fooditems/foodimages/sandwich2.jpg'
 const sandwich3 = './fooditems/foodimages/sandwich3.jpg'
+const cake1 = './fooditems/foodimages/cake1.jpg'
 
 export const foodlist=[
     {
@@ -104,5 +105,12 @@ export const foodlist=[
         price:"75",
         description:"Food provides essential nutrients for overall health and well-being",
         category:"Sandwich"
+    }, {
+        id:"13" ,
+        name:"Birthdat Cake",
+        image:cake1,
+        price:"399",
+        description:"Food provides essential nutrients for overall health and well-being",
+        category:"Cake"
     }
 ]

@@ -30,7 +30,7 @@ const StoreProvider = ({ children }) => {
     //     console.log(cartIteams); 
     // },[cartIteams])
     const List = { foodlist, cartIteams, setcartIteams, addtocart, removefromcart ,gettotalcartamount}
-
+console.log(cartIteams)
     return <Store.Provider value={List}>
         {children}
     </Store.Provider>

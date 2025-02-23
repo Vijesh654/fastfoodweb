@@ -1,16 +1,19 @@
 import React, { useContext} from "react";
 import { Store } from "./Storefoodlistt";
 import './cartitem.css'
+import { useNavigate} from "react-router-dom";
 const Cart=()=>{
     const {cartIteams,foodlist,removefromcart,gettotalcartamount}=useContext(Store)
-    
-   // console.log(cartIteams.length);
+    const navigate=useNavigate()
    // const [total,settotal]=useState();
     // //const [Delivery,setdelevery]=useState(0);
     // if(gettotalcartamount()>0){
     //    settotal(gettotalcartamount()+19);
     //   // setdelevery(10);
     // }
+    const btn=()=>{
+        if(gettotalcartamount()>0) navigate("/order");
+    }
    
     return(
         <>
@@ -25,6 +28,11 @@ const Cart=()=>{
                     <th>Total</th>
                     <th>Remove</th>
                 </tr>
+
+                {
+                cartIteams.length==0?console.log("not card"):""
+            }
+
             {foodlist.map((item,index)=>{
                 if(cartIteams[item.id]>0)
                 {
@@ -40,6 +48,9 @@ const Cart=()=>{
                     )
                 }
             })}
+          
+          {gettotalcartamount()<=0?<h1 className="text-3xl font-bold ml-20 mt-5" >Not Card Items</h1>:""}
+
             </table>
             <table className="w-96 mt-40 ml-10 float-left" cellPadding="10px">
                 <tr >
@@ -51,13 +62,15 @@ const Cart=()=>{
                 </tr>
                 <tr className="tb">
                     <td>Delivery Fee</td>
-                    <td>{19}</td>
+                    <td>   {gettotalcartamount()>0?19:"0"}</td>
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td>{gettotalcartamount()+19}</td>
+                    <td>
+                        {gettotalcartamount()>0?gettotalcartamount()+19:"0"}
+                        </td>
                 </tr>
-                <button className="w-60 mt-5 text-white font-bold font-sans h-8 bg-orange-500">PROCEED TO ORDER</button>
+                <button onClick={btn} className="w-60 mt-5 text-white font-bold font-sans h-8 bg-orange-500">PROCEED TO ORDER</button>
             </table>
 
             <div className="w-80 float-left">

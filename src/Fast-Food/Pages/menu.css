@@ -2,7 +2,8 @@
     border-radius: 200px;
     height:80px;
     width:80px;
+   
 }
 .active{
-    border: 5px solid red;
+   border: 8px solid rgb(249, 102, 5);
 }
