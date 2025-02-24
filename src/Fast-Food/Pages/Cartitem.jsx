@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext,useState,useEffect} from "react";
 import { Store } from "./Storefoodlistt";
 import './cartitem.css'
 import { useNavigate} from "react-router-dom";
@@ -11,6 +11,26 @@ const Cart=()=>{
     //    settotal(gettotalcartamount()+19);
     //   // setdelevery(10);
     // }
+
+    
+    const [count,setcount]=useState(0)
+    useEffect(() => {
+        let tempCount = 0;
+        const keys = Object.keys(cartIteams);
+        const len = keys.length;
+        
+        for (var i = 0; i < len; i++) {
+          const key = keys[i];
+          const value = cartIteams[key];
+          if (value > 0) {
+            tempCount++;
+          }
+        }
+        setcount(tempCount*19); 
+      }, [cartIteams]);
+    //   console.log(count);
+   
+    
     const btn=()=>{
         if(gettotalcartamount()>0) navigate("/order");
     }
@@ -62,12 +82,12 @@ const Cart=()=>{
                 </tr>
                 <tr className="tb">
                     <td>Delivery Fee</td>
-                    <td>   {gettotalcartamount()>0?19:"0"}</td>
+                    <td>   {gettotalcartamount()>0?count:"0"}</td>
                 </tr>
                 <tr>
                     <td>Total</td>
                     <td>
-                        {gettotalcartamount()>0?gettotalcartamount()+19:"0"}
+                        {gettotalcartamount()>0?gettotalcartamount()+count:"0"}
                         </td>
                 </tr>
                 <button onClick={btn} className="w-60 mt-5 text-white font-bold font-sans h-8 bg-orange-500">PROCEED TO ORDER</button>

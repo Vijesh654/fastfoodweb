@@ -59,7 +59,7 @@ const addtocard = './fooditems/icons/addtocard.png';
                 </li>
                 <li className="relative">
                   <Link to="/cart">
-                    <img className="h-10 w-10" src={addtocard} alt="Cart Icon" />
+                    <img className="lg:h-10 lg:w-10 sm:w-4 sm:h-3" src={addtocard} alt="Cart Icon" />
                     </Link>
                     {count>0?
               <span className="absolute -top-2 -right-2 bg-yellow-500 text-white font-bold text-xs px-2 rounded-full">
